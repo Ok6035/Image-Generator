@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Image Generator</h1>
+        <form action="/generate" method="post">
+            <button type="submit">Generate Image</button>
+        </form>
+        <div id="generated-image">
+            {% if generated_image %}
+                <img src="{{ url_for('generated_image') }}" alt="Generated Image">
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
